@@ -24,6 +24,7 @@ We stay in the user space while kernel works in the background.
 
 #### 3. Init/Systemd (My Fav. Special Process)
 **Init vs Systemd**
+
 Init: Earlier it was an old school initialization method used by linux. It starts services one by one during system boot.
 It is simple but slow and does not handle service failures well.
 
