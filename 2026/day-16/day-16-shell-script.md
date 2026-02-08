@@ -24,7 +24,7 @@ echo "Hello, I am $NAME and I am a $ROLE"
 ```
 **Output:** 
 ```txt
-Hello, I am Priyanka and i am a DevOps engineer
+Hello, I am Priyanka and I am a DevOps engineer
 ```
 Note:
 Putting single quotes (' ') prevents the shell from expanding variables inside the text.
@@ -114,6 +114,7 @@ else
         echo "skipped"
 fi
 ```
+**Output:**
 <img width="918" height="508" alt="image" src="https://github.com/user-attachments/assets/daf4803e-b79d-4dba-abeb-380b93cb77f0" />
 
 ### Day 16 Outputs
