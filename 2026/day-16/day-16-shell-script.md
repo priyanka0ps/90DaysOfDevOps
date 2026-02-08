@@ -1,38 +1,53 @@
-## Shell Scripting Practice
+# Day 16 - Bash Scripting Tasks
 
-### Task 1 
-#!/bin/bash (shebang)
+## Task 1
+
+```bash
+#!/bin/bash
 echo "Hello, DevOps!"
-
-**Output:** Hello, devOps!
-It falls back to the Parent Shell: When a script lacks a shebang, the shell you are currently using (the "parent shell," e.g., bash, zsh) assumes responsibility for interpreting the script.
+```
+**Output:**
+```txt
+Hello, DevOps!
+```
+Note:
+If a script lacks a shebang, the shell you are currently using (the "parent shell," e.g., bash, zsh) may interpret the script.
 
 ### Task 2
+```bash
 #!/bin/bash
 
 NAME="Priyanka"
 ROLE="DevOps engineer"
 
 echo "Hello, I am $NAME and I am a $ROLE"
-
-**Output:** Hello, I am Priyanka and i am a DevOps engineer
-Putting single quotes (' ') prevents the shell from interpreting special characters or expanding variables within the text
+```
+**Output:** 
+```txt
+Hello, I am Priyanka and i am a DevOps engineer
+```
+Note:
+Putting single quotes (' ') prevents the shell from expanding variables inside the text.
 
 ### Task 3
+```bash
 #!/bin/bash
 
 read -p "Enter your name: " NAME
 read -p "What is your favourite tool? " TOOL
 
 echo "Hello $NAME, your favourite tool is $TOOL"
-
+```
 **Output:** 
+```txt
 Enter your name: Leaf
 What is your favourite tool? Shell
 Hello Leaf, your favourite tool is Shell
-
+```
 ### Task 4
+
 a. To check if a number is positive, negative or zero
+```bash
 #!/bin/bash
 
 read -p "Enter a number: " num
@@ -52,15 +67,18 @@ then
 else
         echo "Number entered is zero"
 fi
-
+```
 **Output:** 
+```txt
 Enter a number: 32
 32 is a positive number
-
-- Do not forget the spaces and condition to handle the error especially for negative numbers
+```
+Note:
+Do not forget spaces in conditions and handle errors properly (especially for negative numbers).
 
 b. To check if the file exists or not
-#1/bin/bash
+```bash
+#!/bin/bash
 
 read -p "enter a filename: " filename
 
@@ -70,12 +88,14 @@ then
 else
         echo "File not found"
 fi
-
+```
 **Output:**
+```txt
 enter a filename: install_packages.sh
 File install_packages.sh exists
-
+```
 ### Task 5
+```bash
 #!/bin/bash
 
 read -p "Enter a service: " service
@@ -93,7 +113,7 @@ then
 else
         echo "skipped"
 fi
-
+```
 <img width="918" height="508" alt="image" src="https://github.com/user-attachments/assets/daf4803e-b79d-4dba-abeb-380b93cb77f0" />
 
 ### Day 16 Outputs
