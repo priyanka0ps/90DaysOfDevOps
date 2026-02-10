@@ -81,4 +81,72 @@ Enter a number: 15
 0
 done
 ```
+### Task 3
+Command line arguments
+1. Create a script greet.sh
+```bash
+#!/bin/bash
+name=$1
+if [ $1 ]
+then
+        echo "Hello, $name!"
+else
+        echo "Usage: ./greet2.sh"
+fi
+```
+Output:
+```txt
+dev@pop-os:~/devops$ ./greet2.sh
+Usage: ./greet2.sh
+dev@pop-os:~/devops$ ./greet2.sh Lufy
+Hello, Lufy!
+```
+2. Create a script args_demo.sh
+```bash
+#!/bin/bash
+
+echo "Total number of arguments: " $#
+
+echo "All arguments: " $@
+
+echo "Script name: " $0
+```
+Output:
+```txt
+dev@pop-os:~/devops$ sh args_demo.sh Hello Linux nginx git docker aws
+Total number of arguments:  6
+All arguments:  Hello Linux nginx git docker aws
+Script name:  args_demo.sh
+```
+
+### task 4
+Installing packages via script
+```bash
+#!/bin/bash
+
+list=("nginx" "curl" "wget" "docker")
+
+sudo apt-get update
+
+for package in ${list[@]};
+do
+        echo "Checking if $package is installed or not"
+
+        if dpkg -s "$package" >/dev/null 2>&1; then
+                echo "$package is already installed"
+
+        else
+                echo "=====continue installing====="
+                sudo apt install "$package" -y
+        fi
+
+        if dpkg -s "$package" >/dev/null 2>&1; then
+                echo "$package : Installed Successfully"
+        else
+                echo " $package : Installation Failed"
+        fi
+done
+```
+
+
 
