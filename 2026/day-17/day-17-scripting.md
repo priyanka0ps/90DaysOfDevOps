@@ -119,7 +119,7 @@ All arguments:  Hello Linux nginx git docker aws
 Script name:  args_demo.sh
 ```
 
-### task 4
+### Task 4
 Installing packages via script
 ```bash
 #!/bin/bash
@@ -147,6 +147,35 @@ do
         fi
 done
 ```
+
+### Task 5
+```bash
+#!/bin/bash
+
+set -e
+
+read -p "Directory path: " dir_path
+
+mkdir "$dir_path" || echo "directory already exists"
+echo "Hello, this is my new file." > hello.txt
+cat hello.txt
+cd "$dir_path"
+pwd
+```
+Output:
+```txt
+dev@pop-os:~/devops$ ./safe_script.sh
+Directory path: /tmp/devops-test
+mkdir: cannot create directory ‘/tmp/devops-test’: File exists
+directory already exists
+Hello, this is my new file.
+/tmp/devops-test
+dev@pop-os:~/devops$ ./safe_script.sh
+Directory path: /tmp/hello_test
+Hello, this is my new file.
+/tmp/hello_test
+```
+
 
 
 
